@@ -106,7 +106,7 @@ class TestRepeater:
 
         # assert
         assert self.__calls_count == 10
-        assert start_time + 1.8 <= monotonic()
+        assert start_time <= monotonic() - 1.8
 
         assert result.is_success is False
         assert result.is_failed is True
