@@ -18,8 +18,8 @@ class Repeater:
         return self
 
     def run(self, **kwargs: Any) -> 'RepeaterResult':
-        count = 0
-        while self.__attempts > count:
+        count = 1
+        while self.__attempts >= count:
             action_result = self.__perform_action(**kwargs)
             match type(action_result):
                 case Repeater.Next if self.__attempts == count:
