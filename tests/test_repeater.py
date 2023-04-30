@@ -9,6 +9,23 @@ from src.repeater import Repeater
 class TestRepeater:
     __calls_count: int = 0
 
+    def test_when_not_configured(self):
+        @self.__record_calls_count
+        def action():
+            return None
+
+        repeater = Repeater(action=action)
+
+        # act
+        try:
+            repeater.run()
+        except Exception as exception:
+            assert type(exception) == RuntimeError
+            assert str(exception) == 'repeater not configured'
+
+        # assert
+        assert self.__calls_count == 0
+
     @pytest.mark.parametrize('action_result', [None, 1, 2.50, True, 'Hello World!'])
     def test_when_success_on_first_attempt(self, action_result: Any):
         # setup

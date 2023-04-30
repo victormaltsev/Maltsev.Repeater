@@ -18,6 +18,9 @@ class Repeater:
         return self
 
     def run(self, **kwargs: Any) -> 'RepeaterResult':
+        if self.__attempts is None or self.__delay is None:
+            raise RuntimeError('repeater not configured')
+
         count = 1
         while self.__attempts >= count:
             action_result = self.__perform_action(**kwargs)
