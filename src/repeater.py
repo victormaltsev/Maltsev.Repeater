@@ -25,8 +25,10 @@ class Repeater:
         while self.__attempts >= count:
             action_result = self.__perform_action(**kwargs)
             match type(action_result):
-                case Repeater.Next if self.__attempts == count:
-                    break
+                case Repeater.Next if self.__attempts <= count:
+                    repeater_result = RepeaterResult(is_success=False, is_failed=True)
+                    repeater_result.error_message = f'number of attempts exceeded (attempts: {self.__attempts}, delay: {self.__delay})'
+                    return repeater_result
                 case Repeater.Next:
                     count += 1
                     sleep(self.__delay)
@@ -38,10 +40,6 @@ class Repeater:
                     repeater_result = RepeaterResult(is_success=True, is_failed=False)
                     repeater_result.value = action_result
                     return repeater_result
-
-        repeater_result = RepeaterResult(is_success=False, is_failed=True)
-        repeater_result.error_message = f'number of attempts exceeded (attempts: {self.__attempts}, delay: {self.__delay})'
-        return repeater_result
 
     def __perform_action(self, **kwargs: Any) -> Any:
         if kwargs:
