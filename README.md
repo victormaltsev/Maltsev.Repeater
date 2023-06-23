@@ -4,7 +4,7 @@
 Usage Repeater.Next and returns string:
 
 ```python
-calls_count = 0
+calls_count: int = 0
 
 
 def action(multiplier: int) -> str | Repeater.Next:
@@ -25,10 +25,10 @@ if result.is_success:
     print(result.value)
 
 # output:
-# -> count: 1, result: 2
-# -> count: 2, result: 4
-# -> count: 3, result: 6
-# -> count: 4, result: 8
+# -> calls_count: 1, result: 2
+# -> calls_count: 2, result: 4
+# -> calls_count: 3, result: 6
+# -> calls_count: 4, result: 8
 # -> Hello World!
 ```
 
@@ -36,7 +36,7 @@ if result.is_success:
 Usage Repeater.Next and Repeater.Fail:
 
 ```python
-calls_count = 0
+calls_count: int = 0
 
 
 def action(multiplier: int) -> Repeater.Next | Repeater.Fail:
@@ -62,10 +62,10 @@ if result.is_failed:
     print(result.error_message)
 
 # output:
-# -> count: 1, result: 2
-# -> count: 2, result: 4
-# -> count: 3, result: 6
-# -> count: 4, result: 8
+# -> calls_count: 1, result: 2
+# -> calls_count: 2, result: 4
+# -> calls_count: 3, result: 6
+# -> calls_count: 4, result: 8
 # -> is failed statement
 # -> failed abc
 ```
@@ -74,7 +74,7 @@ if result.is_failed:
 Usage Repeater.Next and raise AssertionError:
 
 ```python
-calls_count = 0
+calls_count: int = 0
 
 
 def action(multiplier: int) -> Repeater.Next:
@@ -96,9 +96,9 @@ except AssertionError as error:
     print(error)
 
 # output:
-# -> count: 1, result: 2
-# -> count: 2, result: 4
-# -> count: 3, result: 6
-# -> count: 4, result: 8
+# -> calls_count: 1, result: 2
+# -> calls_count: 2, result: 4
+# -> calls_count: 3, result: 6
+# -> calls_count: 4, result: 8
 # -> assertion error abc
 ```
