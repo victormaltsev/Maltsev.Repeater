@@ -1,0 +1,9 @@
+[tool.poetry]
+name = 'maltsev-repeater'
+description = ''
+version = '1.0.0'
+
+repository = 'https://github.com/victormaltsev/Maltsev.Repeater'
+readme = 'README.md'
+license = 'MIT'
+authors = ['Victor Maltsev <git@victormaltsev.com>']
