@@ -1,5 +1,7 @@
 # Maltsev.Repeater
 
+Install python package: `pip install maltsev-repeater`
+
 \
 Usage Repeater.Next and returns string:
 
