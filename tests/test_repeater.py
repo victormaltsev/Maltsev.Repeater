@@ -3,7 +3,7 @@ from typing import Any
 
 import pytest
 
-from src.repeater import Repeater
+from src.maltsev_repeater.repeater import Repeater
 
 
 class TestRepeater:

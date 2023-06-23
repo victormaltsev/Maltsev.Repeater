@@ -1,6 +1,6 @@
 import pytest
 
-from src.repeater_result import RepeaterResult
+from src.maltsev_repeater.repeater_result import RepeaterResult
 
 
 class TestRepeaterResult:
