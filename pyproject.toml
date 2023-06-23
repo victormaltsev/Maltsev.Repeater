@@ -1,7 +1,7 @@
 [tool.poetry]
 name = 'maltsev-repeater'
 description = ''
-version = '1.0.0'
+version = '1.0.1'
 
 repository = 'https://github.com/victormaltsev/Maltsev.Repeater'
 readme = 'README.md'
