@@ -1,7 +1,7 @@
 from time import sleep
 from typing import Any
 
-from src.maltsev_repeater.repeater_result import RepeaterResult
+from .repeater_result import RepeaterResult
 
 
 class Repeater:
